@@ -15,6 +15,7 @@ public class ExperimentManagerTowards : MonoBehaviour
 
 	void Start()
 	{
+		Application.targetFrameRate = (int) Screen.currentResolution.refreshRateRatio.value;
 		if (experiment_params == null)
 		{
 			Debug.LogError("ExperimentParams is not assigned");
@@ -36,9 +37,9 @@ public class ExperimentManagerTowards : MonoBehaviour
 		SetupTrial(Random.Range(0, experiment_params.trials.Count));
 	}
 
-	void Update()
+	void FixedUpdate()
 	{
-		Debug.Log("dt: " + Time.deltaTime.ToString());
+		// Debug.Log("dt: " + Time.deltaTime.ToString());
 		frame_count++;
 
 		int left_update_interval = experiment_params.default_framerate / trial_config.left_object_frame_rate;

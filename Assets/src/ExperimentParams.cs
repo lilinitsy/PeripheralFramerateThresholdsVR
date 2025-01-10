@@ -4,7 +4,7 @@ using System.Collections.Generic;
 [CreateAssetMenu(fileName = "ExperimentParams", menuName = "Scriptable Objects/ExperimentParams")]
 public class ExperimentParams : ScriptableObject
 {
-	public int default_framerate = 90;
+	public int default_framerate = 120;
 	public Vector3 camera_position = new Vector3(0.0f, 1.0f, 0.0f);
 
 	public float[] x_positions = {12.0f, 10.0f, 8.0f, 6.0f, 4.0f, 2.0f};
