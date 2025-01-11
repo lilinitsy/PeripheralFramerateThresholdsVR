@@ -1,4 +1,7 @@
 using UnityEngine;
+using System.IO;
+using static System.Runtime.CompilerServices.RuntimeHelpers;
+
 
 public class ExperimentManagerLateral : MonoBehaviour
 {
@@ -47,6 +50,16 @@ public class ExperimentManagerLateral : MonoBehaviour
 		// Debug.Log("dt: " + Time.deltaTime.ToString());
 		frame_count++;
 
+		if (Input.GetKeyDown(KeyCode.LeftArrow))
+		{
+			save_trial_data(KeyCode.LeftArrow);
+		}
+
+		else if (Input.GetKeyDown(KeyCode.RightArrow))
+		{
+			save_trial_data(KeyCode.RightArrow);
+		}
+
 		int left_update_interval = experiment_params.default_framerate / trial_config.left_object_frame_rate;
 		int right_update_interval = experiment_params.default_framerate / trial_config.right_object_frame_rate;
 
@@ -80,6 +93,7 @@ public class ExperimentManagerLateral : MonoBehaviour
 
 	public void SetupTrial(int trial_index)
 	{
+		current_trial++;
 		if (trial_index < 0 || trial_index >= experiment_params.trials.Count)
 		{
 			Debug.LogError("Invalid trial index.");
@@ -104,5 +118,61 @@ public class ExperimentManagerLateral : MonoBehaviour
 				  $"Right FrameRate: {trial_config.right_object_frame_rate}");
 	}
 
+	public void save_trial_data(KeyCode keycode)
+	{
+		string filepath = Path.Combine(Application.dataPath, "experiment-lateral.csv");
+		string[] headers = {
+			"TrialNum",
+			"Speed",
+			"LeftFrameRate",
+			"RightFrameRate",
+			"UserInput",
+			"Correct" // Whether UserInput matches whichever was the non-target framerate. Will always be false when they're the same.
+		};
 
+		string left_right = "";
+		bool b_correct = false;
+
+
+		if (keycode == KeyCode.LeftArrow)
+		{
+			left_right = "left";
+		}
+
+		else if (keycode == KeyCode.RightArrow)
+		{
+			left_right = "right";
+		}
+
+		// Left is slower, they selected left
+		if (trial_config.left_object_frame_rate != experiment_params.default_framerate && left_right == "left")
+		{
+			b_correct = true;
+		}
+
+		else if (trial_config.right_object_frame_rate != experiment_params.default_framerate && left_right == "right")
+		{
+			b_correct = true;
+		}
+
+
+
+		string[] trial_data = {
+			current_trial.ToString(),
+			trial_config.speed.ToString(),
+			trial_config.left_object_frame_rate.ToString(),
+			trial_config.right_object_frame_rate.ToString(),
+			left_right,
+		};
+
+		if (!File.Exists(filepath))
+		{
+			string headerline = string.Join(",", headers) + "\n";
+			File.WriteAllText(filepath, headerline);
+		}
+
+		// Append trial data
+		string trialline = string.Join(",", trial_data) + "\n";
+		File.AppendAllText(filepath, trialline);
+	}
 }

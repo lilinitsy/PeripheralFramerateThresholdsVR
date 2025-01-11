@@ -125,10 +125,13 @@ public class ExperimentManagerTowards : MonoBehaviour
 			"Speed",
 			"LeftFrameRate",
 			"RightFrameRate",
-			"UserInput"
+			"UserInput",
+			"Correct" // Whether UserInput matches whichever was the non-target framerate. Will always be false when they're the same.
 		};
 
 		string left_right = "";
+		bool b_correct = false;
+
 		
 		if(keycode == KeyCode.LeftArrow)
 		{
@@ -139,6 +142,19 @@ public class ExperimentManagerTowards : MonoBehaviour
 		{
 			left_right = "right";
 		}
+
+		// Left is slower, they selected left
+		if (trial_config.left_object_frame_rate != experiment_params.default_framerate && left_right == "left")
+		{
+			b_correct = true;
+		}
+
+		else if(trial_config.right_object_frame_rate != experiment_params.default_framerate && left_right == "right")
+		{
+			b_correct = true;
+		}
+
+
 
 		string[] trial_data = {
 			current_trial.ToString(),
