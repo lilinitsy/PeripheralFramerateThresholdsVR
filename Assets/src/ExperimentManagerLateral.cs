@@ -1,8 +1,6 @@
-using System.IO;
 using UnityEngine;
-using static System.Runtime.CompilerServices.RuntimeHelpers;
 
-public class ExperimentManagerTowards : MonoBehaviour
+public class ExperimentManagerLateral : MonoBehaviour
 {
 	public ExperimentParams experiment_params; // Reference the ScriptableObject
 	public GameObject left_sphere;
@@ -37,8 +35,9 @@ public class ExperimentManagerTowards : MonoBehaviour
 		experiment_params.generate_trials();
 		Debug.Log($"Generated {experiment_params.trials.Count} trials.");
 		camera_origin = new Vector3(0.0f, 1.0f, 0.0f);
-		left_sphere_target_point = new Vector3(camera_origin.x - 1.0f, camera_origin.y, camera_origin.z);
-		right_sphere_target_point = new Vector3(camera_origin.x + 1.0f, camera_origin.y, camera_origin.z);
+
+		left_sphere_target_point = new Vector3(camera_origin.x - 2.0f, camera_origin.y, experiment_params.z_position);
+		right_sphere_target_point = new Vector3(camera_origin.x + 2.0f, camera_origin.y, experiment_params.z_position);
 
 		SetupTrial(Random.Range(0, experiment_params.trials.Count));
 	}
@@ -47,16 +46,6 @@ public class ExperimentManagerTowards : MonoBehaviour
 	{
 		// Debug.Log("dt: " + Time.deltaTime.ToString());
 		frame_count++;
-
-		if (Input.GetKeyDown(KeyCode.LeftArrow))
-		{
-			save_trial_data(KeyCode.LeftArrow);
-		}
-
-		else if(Input.GetKeyDown(KeyCode.RightArrow))
-		{
-			save_trial_data(KeyCode.RightArrow);
-		}
 
 		int left_update_interval = experiment_params.default_framerate / trial_config.left_object_frame_rate;
 		int right_update_interval = experiment_params.default_framerate / trial_config.right_object_frame_rate;
@@ -91,7 +80,6 @@ public class ExperimentManagerTowards : MonoBehaviour
 
 	public void SetupTrial(int trial_index)
 	{
-		current_trial++;
 		if (trial_index < 0 || trial_index >= experiment_params.trials.Count)
 		{
 			Debug.LogError("Invalid trial index.");
@@ -117,46 +105,4 @@ public class ExperimentManagerTowards : MonoBehaviour
 	}
 
 
-	public void save_trial_data(KeyCode keycode)
-	{
-		string filepath = Path.Combine(Application.dataPath, "experiment-towards.csv");
-		string[] headers = {
-			"TrialNum",
-			"Speed",
-			"LeftFrameRate",
-			"RightFrameRate",
-			"UserInput"
-		};
-
-		string left_right = "";
-		
-		if(keycode == KeyCode.LeftArrow)
-		{
-			left_right = "left";
-		}
-
-		else if(keycode == KeyCode.RightArrow)
-		{
-			left_right = "right";
-		}
-
-		string[] trial_data = {
-			current_trial.ToString(),
-			trial_config.speed.ToString(),
-			trial_config.left_object_frame_rate.ToString(),
-			trial_config.right_object_frame_rate.ToString(),
-			left_right,
-		};
-
-
-		if (!File.Exists(filepath))
-		{
-			string headerline = string.Join(",", headers) + "\n";
-			File.WriteAllText(filepath, headerline);
-		}
-
-		// Append trial data
-		string trialline = string.Join(",", trial_data) + "\n";
-		File.AppendAllText(filepath, trialline);
-	}
 }

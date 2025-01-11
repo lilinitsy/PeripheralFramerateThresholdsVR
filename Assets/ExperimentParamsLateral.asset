@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb92c0d9500fc9a49a277349f56b9fbc, type: 3}
+  m_Name: ExperimentParamsLateral
+  m_EditorClassIdentifier: 
+  default_framerate: 120
+  camera_position: {x: 0, y: 1, z: 0}
+  x_positions:
+  - 12
+  - 10
+  - 8
+  y_position: 1
+  speeds:
+  - 4
+  alternate_framerates: 0c0000000f000000140000001e000000280000003c00000078000000
+  trials: []

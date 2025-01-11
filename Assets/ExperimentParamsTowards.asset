@@ -10,11 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cb92c0d9500fc9a49a277349f56b9fbc, type: 3}
-  m_Name: ExperimentParamsScriptableObject
+  m_Name: ExperimentParamsTowards
   m_EditorClassIdentifier: 
-  default_framerate: 90
+  default_framerate: 120
   camera_position: {x: 0, y: 1, z: 0}
   x_positions:
+  - 12
+  - 10
   - 8
   - 6
   - 4
@@ -25,5 +27,5 @@ MonoBehaviour:
   - 10
   - 15
   - 20
-  alternate_framerates: 1e0000002d0000005a000000
+  alternate_framerates: 0c0000000f000000140000001e000000280000003c00000078000000
   trials: []
