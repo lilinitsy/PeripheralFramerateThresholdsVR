@@ -13,6 +13,7 @@ public class ExperimentParams : ScriptableObject
 	public float y_position = 1.0f;
 	public float z_position = 25.0f;
 
+	// Input as degrees for the rotation parameters
 	public float[] speeds = {5.0f, 10.0f, 15.0f, 20.0f};
 
 	public int[] alternate_framerates = {12, 15, 20, 30, 40, 60, 120};
