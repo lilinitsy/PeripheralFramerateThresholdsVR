@@ -214,7 +214,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &506002275
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -230,6 +230,8 @@ MonoBehaviour:
   experiment_params: {fileID: 11400000, guid: 2cc543af92dbe1b4a81bb9a580b2c754, type: 2}
   left_sphere: {fileID: 1469391163}
   right_sphere: {fileID: 1366009707}
+  fixation_textmeshpro: {fileID: 507583493}
+  attention_level: 1
 --- !u!4 &506002276
 Transform:
   m_ObjectHideFlags: 0
@@ -257,7 +259,7 @@ GameObject:
   - component: {fileID: 507583495}
   - component: {fileID: 507583494}
   m_Layer: 0
-  m_Name: FixationCross
+  m_Name: FixationTaskTextMeshPro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -312,8 +314,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 12
-  m_fontSizeBase: 12
+  m_fontSize: 6
+  m_fontSizeBase: 6
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -439,7 +441,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &757842680
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -455,6 +457,8 @@ MonoBehaviour:
   experiment_params: {fileID: 11400000, guid: 30fd65ffe3766b9489291ca529697da8, type: 2}
   left_sphere: {fileID: 1469391163}
   right_sphere: {fileID: 1366009707}
+  fixation_textmeshpro: {fileID: 507583493}
+  attention_level: 1
 --- !u!4 &757842681
 Transform:
   m_ObjectHideFlags: 0

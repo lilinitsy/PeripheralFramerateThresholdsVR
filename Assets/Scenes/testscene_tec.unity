@@ -265,8 +265,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 12
-  m_fontSizeBase: 12
+  m_fontSize: 6
+  m_fontSizeBase: 6
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -844,6 +844,8 @@ MonoBehaviour:
   experiment_params: {fileID: 11400000, guid: c5686e710b65bef43a87f8e32dace05f, type: 2}
   left_chart: {fileID: 1737343492}
   right_chart: {fileID: 1168900518}
+  fixation_textmeshpro: {fileID: 700891613}
+  attention_level: 1
 --- !u!4 &1286354244
 Transform:
   m_ObjectHideFlags: 0

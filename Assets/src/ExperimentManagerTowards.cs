@@ -187,7 +187,6 @@ public class ExperimentManagerTowards : MonoBehaviour
 
 		text_component.color = current_colour;
 		text_component.text = current_letter.ToString();
-
 	}
 
 
