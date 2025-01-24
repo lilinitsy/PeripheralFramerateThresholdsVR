@@ -31,9 +31,9 @@ public class ExperimentManagerLateral : MonoBehaviour
 
 	void Start()
 	{
-		//Application.targetFrameRate = (int) Screen.currentResolution.refreshRateRatio.value;
-		Application.targetFrameRate = 120;
-		random = new System.Random();
+        //Application.targetFrameRate = (int) Screen.currentResolution.refreshRateRatio.value;
+        Application.targetFrameRate = 180;
+        random = new System.Random();
 
 		if (experiment_params == null)
 		{
@@ -191,62 +191,65 @@ public class ExperimentManagerLateral : MonoBehaviour
 		text_component.text = current_letter.ToString();
 	}
 
-	public void save_trial_data(KeyCode keycode)
-	{
-		string filepath = Path.Combine(Application.dataPath, "experiment-lateral.csv");
-		string[] headers = {
-			"TrialNum",
-			"Speed",
-			"LeftFrameRate",
-			"RightFrameRate",
-			"UserInput",
-			"Correct" // Whether UserInput matches whichever was the non-target framerate. Will always be false when they're the same.
+    public void save_trial_data(KeyCode keycode)
+    {
+        string filepath = Path.Combine(Application.dataPath, "experiment-lateral.csv");
+        string[] headers = {
+            "TrialNum",
+            "Speed",
+            "Eccentricity",
+            "LeftFrameRate",
+            "RightFrameRate",
+            "UserInput",
+            "Correct" // Whether UserInput matches whichever was the non-target framerate. Will always be false when they're the same.
 		};
 
-		string left_right = "";
-		bool b_correct = false;
+        string left_right = "";
+        bool b_correct = false;
 
 
-		if (keycode == KeyCode.LeftArrow)
-		{
-			left_right = "left";
-		}
+        if (keycode == KeyCode.LeftArrow)
+        {
+            left_right = "left";
+        }
 
-		else if (keycode == KeyCode.RightArrow)
-		{
-			left_right = "right";
-		}
+        else if (keycode == KeyCode.RightArrow)
+        {
+            left_right = "right";
+        }
 
-		// Left is slower, they selected left
-		if (trial_config.left_object_frame_rate != experiment_params.default_framerate && left_right == "left")
-		{
-			b_correct = true;
-		}
+        // Left is slower, they selected left
+        if (trial_config.left_object_frame_rate != experiment_params.default_framerate && left_right == "left")
+        {
+            b_correct = true;
+        }
 
-		else if (trial_config.right_object_frame_rate != experiment_params.default_framerate && left_right == "right")
-		{
-			b_correct = true;
-		}
+        else if (trial_config.right_object_frame_rate != experiment_params.default_framerate && left_right == "right")
+        {
+            b_correct = true;
+        }
 
 
 
-		string[] trial_data = {
-			current_trial.ToString(),
-			trial_config.speed.ToString(),
-			trial_config.left_object_frame_rate.ToString(),
-			trial_config.right_object_frame_rate.ToString(),
-			left_right,
-			b_correct.ToString(),
-		};
+        string[] trial_data = {
+            current_trial.ToString(),
+            trial_config.speed.ToString(),
+            trial_config.eccentricity.ToString(),
+            trial_config.left_object_frame_rate.ToString(),
+            trial_config.right_object_frame_rate.ToString(),
+            left_right,
+            b_correct.ToString(),
+        };
 
-		if (!File.Exists(filepath))
-		{
-			string headerline = string.Join(",", headers) + "\n";
-			File.WriteAllText(filepath, headerline);
-		}
 
-		// Append trial data
-		string trialline = string.Join(",", trial_data) + "\n";
-		File.AppendAllText(filepath, trialline);
-	}
+        if (!File.Exists(filepath))
+        {
+            string headerline = string.Join(",", headers) + "\n";
+            File.WriteAllText(filepath, headerline);
+        }
+
+        // Append trial data
+        string trialline = string.Join(",", trial_data) + "\n";
+        File.AppendAllText(filepath, trialline);
+    }
 }

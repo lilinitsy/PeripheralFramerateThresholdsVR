@@ -31,7 +31,7 @@ public class ExperimentManagerTowards : MonoBehaviour
 	void Start()
 	{
 		//Application.targetFrameRate = (int) Screen.currentResolution.refreshRateRatio.value;
-		Application.targetFrameRate = 120;
+		Application.targetFrameRate = 180;
 		random = new System.Random();
 
 		if (!experiment_params)
@@ -170,6 +170,7 @@ public class ExperimentManagerTowards : MonoBehaviour
 
 
 		Debug.Log($"Trial {trial_index}/{experiment_params.trials.Count} - " +
+				  $"Eccentricity {trial_config.eccentricity}, " +
 				  $"Speed: {trial_config.speed}, " +
 				  $"Left FrameRate: {trial_config.left_object_frame_rate}, " +
 				  $"Right FrameRate: {trial_config.right_object_frame_rate}");
@@ -196,6 +197,7 @@ public class ExperimentManagerTowards : MonoBehaviour
 		string[] headers = {
 			"TrialNum",
 			"Speed",
+			"Eccentricity",
 			"LeftFrameRate",
 			"RightFrameRate",
 			"UserInput",
@@ -232,7 +234,8 @@ public class ExperimentManagerTowards : MonoBehaviour
 		string[] trial_data = {
 			current_trial.ToString(),
 			trial_config.speed.ToString(),
-			trial_config.left_object_frame_rate.ToString(),
+            trial_config.eccentricity.ToString(),
+            trial_config.left_object_frame_rate.ToString(),
 			trial_config.right_object_frame_rate.ToString(),
 			left_right,
 			b_correct.ToString(),
