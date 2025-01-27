@@ -23,7 +23,7 @@ public class ExperimentManagerLateral : MonoBehaviour
 
 	// Variables to change attention level colour;
 	private TextMeshPro text_component; // Reference to fixation_textmeshpro's textmeshpro's component... very  convoluted...
-	private float colour_change_interval = 0.1f;
+	private float colour_change_interval = 0.25f;
 	private float last_colour_change_time = 0.0f;
 	private Color current_colour;
 	private char current_letter = ' ';
