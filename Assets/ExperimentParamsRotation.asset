@@ -10,697 +10,865 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cb92c0d9500fc9a49a277349f56b9fbc, type: 3}
-  m_Name: ExperimentParamsLateral
+  m_Name: ExperimentParamsRotation
   m_EditorClassIdentifier: 
   default_framerate: 180
   camera_position: {x: 0, y: 1, z: 0}
   eccentricities:
-  - 20
-  - 30
-  - 40
-  - 50
+  - 15
+  - 25
+  - 35
+  - 45
   y_position: 1
   z_position: 25
   speeds:
-  - 3
-  - 6
-  alternate_framerates: 0c00000012000000180000001e000000240000002d0000003c0000005a000000b4000000
+  - 90
+  - 180
+  alternate_framerates: 090000000a0000000f000000120000001e0000002d0000005a000000
   trials:
   - left_object_position: {x: -6.69873, y: 1, z: 25}
     right_object_position: {x: 6.69873, y: 1, z: 25}
     eccentricity: 15
-    speed: 3
+    speed: 5
     left_object_frame_rate: 180
     right_object_frame_rate: 12
   - left_object_position: {x: -6.69873, y: 1, z: 25}
     right_object_position: {x: 6.69873, y: 1, z: 25}
     eccentricity: 15
-    speed: 3
+    speed: 5
+    left_object_frame_rate: 12
+    right_object_frame_rate: 180
+  - left_object_position: {x: -6.69873, y: 1, z: 25}
+    right_object_position: {x: 6.69873, y: 1, z: 25}
+    eccentricity: 15
+    speed: 5
     left_object_frame_rate: 180
     right_object_frame_rate: 18
   - left_object_position: {x: -6.69873, y: 1, z: 25}
     right_object_position: {x: 6.69873, y: 1, z: 25}
     eccentricity: 15
-    speed: 3
+    speed: 5
     left_object_frame_rate: 18
     right_object_frame_rate: 180
   - left_object_position: {x: -6.69873, y: 1, z: 25}
     right_object_position: {x: 6.69873, y: 1, z: 25}
     eccentricity: 15
-    speed: 3
-    left_object_frame_rate: 24
-    right_object_frame_rate: 180
-  - left_object_position: {x: -6.69873, y: 1, z: 25}
-    right_object_position: {x: 6.69873, y: 1, z: 25}
-    eccentricity: 15
-    speed: 3
-    left_object_frame_rate: 30
-    right_object_frame_rate: 180
-  - left_object_position: {x: -6.69873, y: 1, z: 25}
-    right_object_position: {x: 6.69873, y: 1, z: 25}
-    eccentricity: 15
-    speed: 3
-    left_object_frame_rate: 180
-    right_object_frame_rate: 36
-  - left_object_position: {x: -6.69873, y: 1, z: 25}
-    right_object_position: {x: 6.69873, y: 1, z: 25}
-    eccentricity: 15
-    speed: 3
-    left_object_frame_rate: 36
-    right_object_frame_rate: 180
-  - left_object_position: {x: -6.69873, y: 1, z: 25}
-    right_object_position: {x: 6.69873, y: 1, z: 25}
-    eccentricity: 15
-    speed: 3
-    left_object_frame_rate: 180
-    right_object_frame_rate: 45
-  - left_object_position: {x: -6.69873, y: 1, z: 25}
-    right_object_position: {x: 6.69873, y: 1, z: 25}
-    eccentricity: 15
-    speed: 3
-    left_object_frame_rate: 60
-    right_object_frame_rate: 180
-  - left_object_position: {x: -6.69873, y: 1, z: 25}
-    right_object_position: {x: 6.69873, y: 1, z: 25}
-    eccentricity: 15
-    speed: 3
-    left_object_frame_rate: 180
-    right_object_frame_rate: 90
-  - left_object_position: {x: -6.69873, y: 1, z: 25}
-    right_object_position: {x: 6.69873, y: 1, z: 25}
-    eccentricity: 15
-    speed: 3
-    left_object_frame_rate: 180
-    right_object_frame_rate: 180
-  - left_object_position: {x: -6.69873, y: 1, z: 25}
-    right_object_position: {x: 6.69873, y: 1, z: 25}
-    eccentricity: 15
-    speed: 3
-    left_object_frame_rate: 180
-    right_object_frame_rate: 180
-  - left_object_position: {x: -6.69873, y: 1, z: 25}
-    right_object_position: {x: 6.69873, y: 1, z: 25}
-    eccentricity: 15
-    speed: 6
-    left_object_frame_rate: 180
-    right_object_frame_rate: 18
-  - left_object_position: {x: -6.69873, y: 1, z: 25}
-    right_object_position: {x: 6.69873, y: 1, z: 25}
-    eccentricity: 15
-    speed: 6
-    left_object_frame_rate: 18
-    right_object_frame_rate: 180
-  - left_object_position: {x: -6.69873, y: 1, z: 25}
-    right_object_position: {x: 6.69873, y: 1, z: 25}
-    eccentricity: 15
-    speed: 6
+    speed: 5
     left_object_frame_rate: 180
     right_object_frame_rate: 24
   - left_object_position: {x: -6.69873, y: 1, z: 25}
     right_object_position: {x: 6.69873, y: 1, z: 25}
     eccentricity: 15
-    speed: 6
+    speed: 5
     left_object_frame_rate: 24
     right_object_frame_rate: 180
   - left_object_position: {x: -6.69873, y: 1, z: 25}
     right_object_position: {x: 6.69873, y: 1, z: 25}
     eccentricity: 15
-    speed: 6
+    speed: 5
     left_object_frame_rate: 180
     right_object_frame_rate: 30
   - left_object_position: {x: -6.69873, y: 1, z: 25}
     right_object_position: {x: 6.69873, y: 1, z: 25}
     eccentricity: 15
-    speed: 6
+    speed: 5
+    left_object_frame_rate: 30
+    right_object_frame_rate: 180
+  - left_object_position: {x: -6.69873, y: 1, z: 25}
+    right_object_position: {x: 6.69873, y: 1, z: 25}
+    eccentricity: 15
+    speed: 5
+    left_object_frame_rate: 180
+    right_object_frame_rate: 36
+  - left_object_position: {x: -6.69873, y: 1, z: 25}
+    right_object_position: {x: 6.69873, y: 1, z: 25}
+    eccentricity: 15
+    speed: 5
+    left_object_frame_rate: 36
+    right_object_frame_rate: 180
+  - left_object_position: {x: -6.69873, y: 1, z: 25}
+    right_object_position: {x: 6.69873, y: 1, z: 25}
+    eccentricity: 15
+    speed: 5
     left_object_frame_rate: 180
     right_object_frame_rate: 45
   - left_object_position: {x: -6.69873, y: 1, z: 25}
     right_object_position: {x: 6.69873, y: 1, z: 25}
     eccentricity: 15
-    speed: 6
+    speed: 5
     left_object_frame_rate: 45
     right_object_frame_rate: 180
   - left_object_position: {x: -6.69873, y: 1, z: 25}
     right_object_position: {x: 6.69873, y: 1, z: 25}
     eccentricity: 15
-    speed: 6
+    speed: 5
     left_object_frame_rate: 180
     right_object_frame_rate: 60
   - left_object_position: {x: -6.69873, y: 1, z: 25}
     right_object_position: {x: 6.69873, y: 1, z: 25}
     eccentricity: 15
-    speed: 6
+    speed: 5
     left_object_frame_rate: 60
     right_object_frame_rate: 180
   - left_object_position: {x: -6.69873, y: 1, z: 25}
     right_object_position: {x: 6.69873, y: 1, z: 25}
     eccentricity: 15
-    speed: 6
-    left_object_frame_rate: 180
-    right_object_frame_rate: 90
-  - left_object_position: {x: -6.69873, y: 1, z: 25}
-    right_object_position: {x: 6.69873, y: 1, z: 25}
-    eccentricity: 15
-    speed: 6
+    speed: 5
     left_object_frame_rate: 90
     right_object_frame_rate: 180
   - left_object_position: {x: -6.69873, y: 1, z: 25}
     right_object_position: {x: 6.69873, y: 1, z: 25}
     eccentricity: 15
-    speed: 6
+    speed: 5
     left_object_frame_rate: 180
     right_object_frame_rate: 180
-  - left_object_position: {x: -11.657692, y: 1, z: 25}
-    right_object_position: {x: 11.657692, y: 1, z: 25}
-    eccentricity: 25
-    speed: 3
+  - left_object_position: {x: -6.69873, y: 1, z: 25}
+    right_object_position: {x: 6.69873, y: 1, z: 25}
+    eccentricity: 15
+    speed: 5
+    left_object_frame_rate: 180
+    right_object_frame_rate: 180
+  - left_object_position: {x: -6.69873, y: 1, z: 25}
+    right_object_position: {x: 6.69873, y: 1, z: 25}
+    eccentricity: 15
+    speed: 15
+    left_object_frame_rate: 180
+    right_object_frame_rate: 12
+  - left_object_position: {x: -6.69873, y: 1, z: 25}
+    right_object_position: {x: 6.69873, y: 1, z: 25}
+    eccentricity: 15
+    speed: 15
+    left_object_frame_rate: 12
+    right_object_frame_rate: 180
+  - left_object_position: {x: -6.69873, y: 1, z: 25}
+    right_object_position: {x: 6.69873, y: 1, z: 25}
+    eccentricity: 15
+    speed: 15
     left_object_frame_rate: 180
     right_object_frame_rate: 18
-  - left_object_position: {x: -11.657692, y: 1, z: 25}
-    right_object_position: {x: 11.657692, y: 1, z: 25}
-    eccentricity: 25
-    speed: 3
+  - left_object_position: {x: -6.69873, y: 1, z: 25}
+    right_object_position: {x: 6.69873, y: 1, z: 25}
+    eccentricity: 15
+    speed: 15
+    left_object_frame_rate: 18
+    right_object_frame_rate: 180
+  - left_object_position: {x: -6.69873, y: 1, z: 25}
+    right_object_position: {x: 6.69873, y: 1, z: 25}
+    eccentricity: 15
+    speed: 15
     left_object_frame_rate: 180
     right_object_frame_rate: 24
-  - left_object_position: {x: -11.657692, y: 1, z: 25}
-    right_object_position: {x: 11.657692, y: 1, z: 25}
-    eccentricity: 25
-    speed: 3
+  - left_object_position: {x: -6.69873, y: 1, z: 25}
+    right_object_position: {x: 6.69873, y: 1, z: 25}
+    eccentricity: 15
+    speed: 15
     left_object_frame_rate: 24
     right_object_frame_rate: 180
-  - left_object_position: {x: -11.657692, y: 1, z: 25}
-    right_object_position: {x: 11.657692, y: 1, z: 25}
-    eccentricity: 25
-    speed: 3
+  - left_object_position: {x: -6.69873, y: 1, z: 25}
+    right_object_position: {x: 6.69873, y: 1, z: 25}
+    eccentricity: 15
+    speed: 15
     left_object_frame_rate: 180
     right_object_frame_rate: 30
-  - left_object_position: {x: -11.657692, y: 1, z: 25}
-    right_object_position: {x: 11.657692, y: 1, z: 25}
-    eccentricity: 25
-    speed: 3
+  - left_object_position: {x: -6.69873, y: 1, z: 25}
+    right_object_position: {x: 6.69873, y: 1, z: 25}
+    eccentricity: 15
+    speed: 15
     left_object_frame_rate: 30
     right_object_frame_rate: 180
-  - left_object_position: {x: -11.657692, y: 1, z: 25}
-    right_object_position: {x: 11.657692, y: 1, z: 25}
-    eccentricity: 25
-    speed: 3
+  - left_object_position: {x: -6.69873, y: 1, z: 25}
+    right_object_position: {x: 6.69873, y: 1, z: 25}
+    eccentricity: 15
+    speed: 15
     left_object_frame_rate: 180
     right_object_frame_rate: 36
-  - left_object_position: {x: -11.657692, y: 1, z: 25}
-    right_object_position: {x: 11.657692, y: 1, z: 25}
-    eccentricity: 25
-    speed: 3
+  - left_object_position: {x: -6.69873, y: 1, z: 25}
+    right_object_position: {x: 6.69873, y: 1, z: 25}
+    eccentricity: 15
+    speed: 15
     left_object_frame_rate: 36
     right_object_frame_rate: 180
-  - left_object_position: {x: -11.657692, y: 1, z: 25}
-    right_object_position: {x: 11.657692, y: 1, z: 25}
-    eccentricity: 25
-    speed: 3
+  - left_object_position: {x: -6.69873, y: 1, z: 25}
+    right_object_position: {x: 6.69873, y: 1, z: 25}
+    eccentricity: 15
+    speed: 15
     left_object_frame_rate: 180
     right_object_frame_rate: 45
-  - left_object_position: {x: -11.657692, y: 1, z: 25}
-    right_object_position: {x: 11.657692, y: 1, z: 25}
-    eccentricity: 25
-    speed: 3
+  - left_object_position: {x: -6.69873, y: 1, z: 25}
+    right_object_position: {x: 6.69873, y: 1, z: 25}
+    eccentricity: 15
+    speed: 15
     left_object_frame_rate: 45
     right_object_frame_rate: 180
-  - left_object_position: {x: -11.657692, y: 1, z: 25}
-    right_object_position: {x: 11.657692, y: 1, z: 25}
-    eccentricity: 25
-    speed: 3
+  - left_object_position: {x: -6.69873, y: 1, z: 25}
+    right_object_position: {x: 6.69873, y: 1, z: 25}
+    eccentricity: 15
+    speed: 15
+    left_object_frame_rate: 180
+    right_object_frame_rate: 60
+  - left_object_position: {x: -6.69873, y: 1, z: 25}
+    right_object_position: {x: 6.69873, y: 1, z: 25}
+    eccentricity: 15
+    speed: 15
     left_object_frame_rate: 60
     right_object_frame_rate: 180
-  - left_object_position: {x: -11.657692, y: 1, z: 25}
-    right_object_position: {x: 11.657692, y: 1, z: 25}
-    eccentricity: 25
-    speed: 3
+  - left_object_position: {x: -6.69873, y: 1, z: 25}
+    right_object_position: {x: 6.69873, y: 1, z: 25}
+    eccentricity: 15
+    speed: 15
     left_object_frame_rate: 180
     right_object_frame_rate: 90
-  - left_object_position: {x: -11.657692, y: 1, z: 25}
-    right_object_position: {x: 11.657692, y: 1, z: 25}
-    eccentricity: 25
-    speed: 3
+  - left_object_position: {x: -6.69873, y: 1, z: 25}
+    right_object_position: {x: 6.69873, y: 1, z: 25}
+    eccentricity: 15
+    speed: 15
     left_object_frame_rate: 90
     right_object_frame_rate: 180
-  - left_object_position: {x: -11.657692, y: 1, z: 25}
-    right_object_position: {x: 11.657692, y: 1, z: 25}
-    eccentricity: 25
-    speed: 3
+  - left_object_position: {x: -6.69873, y: 1, z: 25}
+    right_object_position: {x: 6.69873, y: 1, z: 25}
+    eccentricity: 15
+    speed: 15
+    left_object_frame_rate: 180
+    right_object_frame_rate: 180
+  - left_object_position: {x: -6.69873, y: 1, z: 25}
+    right_object_position: {x: 6.69873, y: 1, z: 25}
+    eccentricity: 15
+    speed: 15
     left_object_frame_rate: 180
     right_object_frame_rate: 180
   - left_object_position: {x: -11.657692, y: 1, z: 25}
     right_object_position: {x: 11.657692, y: 1, z: 25}
     eccentricity: 25
-    speed: 3
-    left_object_frame_rate: 180
-    right_object_frame_rate: 180
-  - left_object_position: {x: -11.657692, y: 1, z: 25}
-    right_object_position: {x: 11.657692, y: 1, z: 25}
-    eccentricity: 25
-    speed: 6
+    speed: 5
     left_object_frame_rate: 180
     right_object_frame_rate: 12
   - left_object_position: {x: -11.657692, y: 1, z: 25}
     right_object_position: {x: 11.657692, y: 1, z: 25}
     eccentricity: 25
-    speed: 6
+    speed: 5
     left_object_frame_rate: 12
     right_object_frame_rate: 180
   - left_object_position: {x: -11.657692, y: 1, z: 25}
     right_object_position: {x: 11.657692, y: 1, z: 25}
     eccentricity: 25
-    speed: 6
+    speed: 5
     left_object_frame_rate: 180
     right_object_frame_rate: 18
   - left_object_position: {x: -11.657692, y: 1, z: 25}
     right_object_position: {x: 11.657692, y: 1, z: 25}
     eccentricity: 25
-    speed: 6
+    speed: 5
     left_object_frame_rate: 18
     right_object_frame_rate: 180
   - left_object_position: {x: -11.657692, y: 1, z: 25}
     right_object_position: {x: 11.657692, y: 1, z: 25}
     eccentricity: 25
-    speed: 6
+    speed: 5
     left_object_frame_rate: 180
     right_object_frame_rate: 24
   - left_object_position: {x: -11.657692, y: 1, z: 25}
     right_object_position: {x: 11.657692, y: 1, z: 25}
     eccentricity: 25
-    speed: 6
+    speed: 5
     left_object_frame_rate: 24
     right_object_frame_rate: 180
   - left_object_position: {x: -11.657692, y: 1, z: 25}
     right_object_position: {x: 11.657692, y: 1, z: 25}
     eccentricity: 25
-    speed: 6
+    speed: 5
     left_object_frame_rate: 180
     right_object_frame_rate: 30
   - left_object_position: {x: -11.657692, y: 1, z: 25}
     right_object_position: {x: 11.657692, y: 1, z: 25}
     eccentricity: 25
-    speed: 6
+    speed: 5
+    left_object_frame_rate: 30
+    right_object_frame_rate: 180
+  - left_object_position: {x: -11.657692, y: 1, z: 25}
+    right_object_position: {x: 11.657692, y: 1, z: 25}
+    eccentricity: 25
+    speed: 5
     left_object_frame_rate: 180
     right_object_frame_rate: 36
   - left_object_position: {x: -11.657692, y: 1, z: 25}
     right_object_position: {x: 11.657692, y: 1, z: 25}
     eccentricity: 25
-    speed: 6
+    speed: 5
     left_object_frame_rate: 36
     right_object_frame_rate: 180
   - left_object_position: {x: -11.657692, y: 1, z: 25}
     right_object_position: {x: 11.657692, y: 1, z: 25}
     eccentricity: 25
-    speed: 6
+    speed: 5
     left_object_frame_rate: 180
     right_object_frame_rate: 45
   - left_object_position: {x: -11.657692, y: 1, z: 25}
     right_object_position: {x: 11.657692, y: 1, z: 25}
     eccentricity: 25
-    speed: 6
+    speed: 5
+    left_object_frame_rate: 45
+    right_object_frame_rate: 180
+  - left_object_position: {x: -11.657692, y: 1, z: 25}
+    right_object_position: {x: 11.657692, y: 1, z: 25}
+    eccentricity: 25
+    speed: 5
     left_object_frame_rate: 180
     right_object_frame_rate: 60
   - left_object_position: {x: -11.657692, y: 1, z: 25}
     right_object_position: {x: 11.657692, y: 1, z: 25}
     eccentricity: 25
-    speed: 6
+    speed: 5
+    left_object_frame_rate: 60
+    right_object_frame_rate: 180
+  - left_object_position: {x: -11.657692, y: 1, z: 25}
+    right_object_position: {x: 11.657692, y: 1, z: 25}
+    eccentricity: 25
+    speed: 5
     left_object_frame_rate: 180
     right_object_frame_rate: 90
   - left_object_position: {x: -11.657692, y: 1, z: 25}
     right_object_position: {x: 11.657692, y: 1, z: 25}
     eccentricity: 25
-    speed: 6
+    speed: 5
     left_object_frame_rate: 90
     right_object_frame_rate: 180
   - left_object_position: {x: -11.657692, y: 1, z: 25}
     right_object_position: {x: 11.657692, y: 1, z: 25}
     eccentricity: 25
-    speed: 6
+    speed: 5
     left_object_frame_rate: 180
     right_object_frame_rate: 180
   - left_object_position: {x: -11.657692, y: 1, z: 25}
     right_object_position: {x: 11.657692, y: 1, z: 25}
     eccentricity: 25
-    speed: 6
+    speed: 5
+    left_object_frame_rate: 180
+    right_object_frame_rate: 180
+  - left_object_position: {x: -11.657692, y: 1, z: 25}
+    right_object_position: {x: 11.657692, y: 1, z: 25}
+    eccentricity: 25
+    speed: 15
+    left_object_frame_rate: 180
+    right_object_frame_rate: 12
+  - left_object_position: {x: -11.657692, y: 1, z: 25}
+    right_object_position: {x: 11.657692, y: 1, z: 25}
+    eccentricity: 25
+    speed: 15
+    left_object_frame_rate: 12
+    right_object_frame_rate: 180
+  - left_object_position: {x: -11.657692, y: 1, z: 25}
+    right_object_position: {x: 11.657692, y: 1, z: 25}
+    eccentricity: 25
+    speed: 15
+    left_object_frame_rate: 180
+    right_object_frame_rate: 18
+  - left_object_position: {x: -11.657692, y: 1, z: 25}
+    right_object_position: {x: 11.657692, y: 1, z: 25}
+    eccentricity: 25
+    speed: 15
+    left_object_frame_rate: 18
+    right_object_frame_rate: 180
+  - left_object_position: {x: -11.657692, y: 1, z: 25}
+    right_object_position: {x: 11.657692, y: 1, z: 25}
+    eccentricity: 25
+    speed: 15
+    left_object_frame_rate: 180
+    right_object_frame_rate: 24
+  - left_object_position: {x: -11.657692, y: 1, z: 25}
+    right_object_position: {x: 11.657692, y: 1, z: 25}
+    eccentricity: 25
+    speed: 15
+    left_object_frame_rate: 24
+    right_object_frame_rate: 180
+  - left_object_position: {x: -11.657692, y: 1, z: 25}
+    right_object_position: {x: 11.657692, y: 1, z: 25}
+    eccentricity: 25
+    speed: 15
+    left_object_frame_rate: 180
+    right_object_frame_rate: 30
+  - left_object_position: {x: -11.657692, y: 1, z: 25}
+    right_object_position: {x: 11.657692, y: 1, z: 25}
+    eccentricity: 25
+    speed: 15
+    left_object_frame_rate: 30
+    right_object_frame_rate: 180
+  - left_object_position: {x: -11.657692, y: 1, z: 25}
+    right_object_position: {x: 11.657692, y: 1, z: 25}
+    eccentricity: 25
+    speed: 15
+    left_object_frame_rate: 180
+    right_object_frame_rate: 36
+  - left_object_position: {x: -11.657692, y: 1, z: 25}
+    right_object_position: {x: 11.657692, y: 1, z: 25}
+    eccentricity: 25
+    speed: 15
+    left_object_frame_rate: 36
+    right_object_frame_rate: 180
+  - left_object_position: {x: -11.657692, y: 1, z: 25}
+    right_object_position: {x: 11.657692, y: 1, z: 25}
+    eccentricity: 25
+    speed: 15
+    left_object_frame_rate: 180
+    right_object_frame_rate: 45
+  - left_object_position: {x: -11.657692, y: 1, z: 25}
+    right_object_position: {x: 11.657692, y: 1, z: 25}
+    eccentricity: 25
+    speed: 15
+    left_object_frame_rate: 45
+    right_object_frame_rate: 180
+  - left_object_position: {x: -11.657692, y: 1, z: 25}
+    right_object_position: {x: 11.657692, y: 1, z: 25}
+    eccentricity: 25
+    speed: 15
+    left_object_frame_rate: 180
+    right_object_frame_rate: 60
+  - left_object_position: {x: -11.657692, y: 1, z: 25}
+    right_object_position: {x: 11.657692, y: 1, z: 25}
+    eccentricity: 25
+    speed: 15
+    left_object_frame_rate: 60
+    right_object_frame_rate: 180
+  - left_object_position: {x: -11.657692, y: 1, z: 25}
+    right_object_position: {x: 11.657692, y: 1, z: 25}
+    eccentricity: 25
+    speed: 15
+    left_object_frame_rate: 180
+    right_object_frame_rate: 90
+  - left_object_position: {x: -11.657692, y: 1, z: 25}
+    right_object_position: {x: 11.657692, y: 1, z: 25}
+    eccentricity: 25
+    speed: 15
+    left_object_frame_rate: 90
+    right_object_frame_rate: 180
+  - left_object_position: {x: -11.657692, y: 1, z: 25}
+    right_object_position: {x: 11.657692, y: 1, z: 25}
+    eccentricity: 25
+    speed: 15
+    left_object_frame_rate: 180
+    right_object_frame_rate: 180
+  - left_object_position: {x: -11.657692, y: 1, z: 25}
+    right_object_position: {x: 11.657692, y: 1, z: 25}
+    eccentricity: 25
+    speed: 15
     left_object_frame_rate: 180
     right_object_frame_rate: 180
   - left_object_position: {x: -17.505188, y: 1, z: 25}
     right_object_position: {x: 17.505188, y: 1, z: 25}
     eccentricity: 35
-    speed: 3
+    speed: 5
     left_object_frame_rate: 180
     right_object_frame_rate: 12
   - left_object_position: {x: -17.505188, y: 1, z: 25}
     right_object_position: {x: 17.505188, y: 1, z: 25}
     eccentricity: 35
-    speed: 3
+    speed: 5
     left_object_frame_rate: 12
     right_object_frame_rate: 180
   - left_object_position: {x: -17.505188, y: 1, z: 25}
     right_object_position: {x: 17.505188, y: 1, z: 25}
     eccentricity: 35
-    speed: 3
+    speed: 5
     left_object_frame_rate: 180
     right_object_frame_rate: 18
   - left_object_position: {x: -17.505188, y: 1, z: 25}
     right_object_position: {x: 17.505188, y: 1, z: 25}
     eccentricity: 35
-    speed: 3
+    speed: 5
     left_object_frame_rate: 18
     right_object_frame_rate: 180
   - left_object_position: {x: -17.505188, y: 1, z: 25}
     right_object_position: {x: 17.505188, y: 1, z: 25}
     eccentricity: 35
-    speed: 3
-    left_object_frame_rate: 180
-    right_object_frame_rate: 24
-  - left_object_position: {x: -17.505188, y: 1, z: 25}
-    right_object_position: {x: 17.505188, y: 1, z: 25}
-    eccentricity: 35
-    speed: 3
-    left_object_frame_rate: 180
-    right_object_frame_rate: 30
-  - left_object_position: {x: -17.505188, y: 1, z: 25}
-    right_object_position: {x: 17.505188, y: 1, z: 25}
-    eccentricity: 35
-    speed: 3
-    left_object_frame_rate: 30
-    right_object_frame_rate: 180
-  - left_object_position: {x: -17.505188, y: 1, z: 25}
-    right_object_position: {x: 17.505188, y: 1, z: 25}
-    eccentricity: 35
-    speed: 3
-    left_object_frame_rate: 180
-    right_object_frame_rate: 36
-  - left_object_position: {x: -17.505188, y: 1, z: 25}
-    right_object_position: {x: 17.505188, y: 1, z: 25}
-    eccentricity: 35
-    speed: 3
-    left_object_frame_rate: 36
-    right_object_frame_rate: 180
-  - left_object_position: {x: -17.505188, y: 1, z: 25}
-    right_object_position: {x: 17.505188, y: 1, z: 25}
-    eccentricity: 35
-    speed: 3
-    left_object_frame_rate: 180
-    right_object_frame_rate: 45
-  - left_object_position: {x: -17.505188, y: 1, z: 25}
-    right_object_position: {x: 17.505188, y: 1, z: 25}
-    eccentricity: 35
-    speed: 3
-    left_object_frame_rate: 45
-    right_object_frame_rate: 180
-  - left_object_position: {x: -17.505188, y: 1, z: 25}
-    right_object_position: {x: 17.505188, y: 1, z: 25}
-    eccentricity: 35
-    speed: 3
-    left_object_frame_rate: 60
-    right_object_frame_rate: 180
-  - left_object_position: {x: -17.505188, y: 1, z: 25}
-    right_object_position: {x: 17.505188, y: 1, z: 25}
-    eccentricity: 35
-    speed: 3
-    left_object_frame_rate: 180
-    right_object_frame_rate: 90
-  - left_object_position: {x: -17.505188, y: 1, z: 25}
-    right_object_position: {x: 17.505188, y: 1, z: 25}
-    eccentricity: 35
-    speed: 3
-    left_object_frame_rate: 90
-    right_object_frame_rate: 180
-  - left_object_position: {x: -17.505188, y: 1, z: 25}
-    right_object_position: {x: 17.505188, y: 1, z: 25}
-    eccentricity: 35
-    speed: 3
-    left_object_frame_rate: 180
-    right_object_frame_rate: 180
-  - left_object_position: {x: -17.505188, y: 1, z: 25}
-    right_object_position: {x: 17.505188, y: 1, z: 25}
-    eccentricity: 35
-    speed: 6
-    left_object_frame_rate: 180
-    right_object_frame_rate: 12
-  - left_object_position: {x: -17.505188, y: 1, z: 25}
-    right_object_position: {x: 17.505188, y: 1, z: 25}
-    eccentricity: 35
-    speed: 6
-    left_object_frame_rate: 12
-    right_object_frame_rate: 180
-  - left_object_position: {x: -17.505188, y: 1, z: 25}
-    right_object_position: {x: 17.505188, y: 1, z: 25}
-    eccentricity: 35
-    speed: 6
-    left_object_frame_rate: 18
-    right_object_frame_rate: 180
-  - left_object_position: {x: -17.505188, y: 1, z: 25}
-    right_object_position: {x: 17.505188, y: 1, z: 25}
-    eccentricity: 35
-    speed: 6
-    left_object_frame_rate: 180
-    right_object_frame_rate: 24
-  - left_object_position: {x: -17.505188, y: 1, z: 25}
-    right_object_position: {x: 17.505188, y: 1, z: 25}
-    eccentricity: 35
-    speed: 6
+    speed: 5
     left_object_frame_rate: 24
     right_object_frame_rate: 180
   - left_object_position: {x: -17.505188, y: 1, z: 25}
     right_object_position: {x: 17.505188, y: 1, z: 25}
     eccentricity: 35
-    speed: 6
+    speed: 5
     left_object_frame_rate: 180
     right_object_frame_rate: 30
   - left_object_position: {x: -17.505188, y: 1, z: 25}
     right_object_position: {x: 17.505188, y: 1, z: 25}
     eccentricity: 35
-    speed: 6
+    speed: 5
     left_object_frame_rate: 30
     right_object_frame_rate: 180
   - left_object_position: {x: -17.505188, y: 1, z: 25}
     right_object_position: {x: 17.505188, y: 1, z: 25}
     eccentricity: 35
-    speed: 6
+    speed: 5
     left_object_frame_rate: 180
     right_object_frame_rate: 36
   - left_object_position: {x: -17.505188, y: 1, z: 25}
     right_object_position: {x: 17.505188, y: 1, z: 25}
     eccentricity: 35
-    speed: 6
+    speed: 5
     left_object_frame_rate: 36
     right_object_frame_rate: 180
   - left_object_position: {x: -17.505188, y: 1, z: 25}
     right_object_position: {x: 17.505188, y: 1, z: 25}
     eccentricity: 35
-    speed: 6
+    speed: 5
     left_object_frame_rate: 180
     right_object_frame_rate: 45
   - left_object_position: {x: -17.505188, y: 1, z: 25}
     right_object_position: {x: 17.505188, y: 1, z: 25}
     eccentricity: 35
-    speed: 6
+    speed: 5
     left_object_frame_rate: 45
     right_object_frame_rate: 180
   - left_object_position: {x: -17.505188, y: 1, z: 25}
     right_object_position: {x: 17.505188, y: 1, z: 25}
     eccentricity: 35
-    speed: 6
+    speed: 5
     left_object_frame_rate: 180
     right_object_frame_rate: 60
   - left_object_position: {x: -17.505188, y: 1, z: 25}
     right_object_position: {x: 17.505188, y: 1, z: 25}
     eccentricity: 35
-    speed: 6
+    speed: 5
     left_object_frame_rate: 60
     right_object_frame_rate: 180
   - left_object_position: {x: -17.505188, y: 1, z: 25}
     right_object_position: {x: 17.505188, y: 1, z: 25}
     eccentricity: 35
-    speed: 6
+    speed: 5
     left_object_frame_rate: 180
     right_object_frame_rate: 90
   - left_object_position: {x: -17.505188, y: 1, z: 25}
     right_object_position: {x: 17.505188, y: 1, z: 25}
     eccentricity: 35
-    speed: 6
+    speed: 5
     left_object_frame_rate: 90
     right_object_frame_rate: 180
   - left_object_position: {x: -17.505188, y: 1, z: 25}
     right_object_position: {x: 17.505188, y: 1, z: 25}
     eccentricity: 35
-    speed: 6
+    speed: 5
+    left_object_frame_rate: 180
+    right_object_frame_rate: 180
+  - left_object_position: {x: -17.505188, y: 1, z: 25}
+    right_object_position: {x: 17.505188, y: 1, z: 25}
+    eccentricity: 35
+    speed: 5
+    left_object_frame_rate: 180
+    right_object_frame_rate: 180
+  - left_object_position: {x: -17.505188, y: 1, z: 25}
+    right_object_position: {x: 17.505188, y: 1, z: 25}
+    eccentricity: 35
+    speed: 15
+    left_object_frame_rate: 180
+    right_object_frame_rate: 12
+  - left_object_position: {x: -17.505188, y: 1, z: 25}
+    right_object_position: {x: 17.505188, y: 1, z: 25}
+    eccentricity: 35
+    speed: 15
+    left_object_frame_rate: 12
+    right_object_frame_rate: 180
+  - left_object_position: {x: -17.505188, y: 1, z: 25}
+    right_object_position: {x: 17.505188, y: 1, z: 25}
+    eccentricity: 35
+    speed: 15
+    left_object_frame_rate: 180
+    right_object_frame_rate: 18
+  - left_object_position: {x: -17.505188, y: 1, z: 25}
+    right_object_position: {x: 17.505188, y: 1, z: 25}
+    eccentricity: 35
+    speed: 15
+    left_object_frame_rate: 18
+    right_object_frame_rate: 180
+  - left_object_position: {x: -17.505188, y: 1, z: 25}
+    right_object_position: {x: 17.505188, y: 1, z: 25}
+    eccentricity: 35
+    speed: 15
+    left_object_frame_rate: 180
+    right_object_frame_rate: 24
+  - left_object_position: {x: -17.505188, y: 1, z: 25}
+    right_object_position: {x: 17.505188, y: 1, z: 25}
+    eccentricity: 35
+    speed: 15
+    left_object_frame_rate: 24
+    right_object_frame_rate: 180
+  - left_object_position: {x: -17.505188, y: 1, z: 25}
+    right_object_position: {x: 17.505188, y: 1, z: 25}
+    eccentricity: 35
+    speed: 15
+    left_object_frame_rate: 30
+    right_object_frame_rate: 180
+  - left_object_position: {x: -17.505188, y: 1, z: 25}
+    right_object_position: {x: 17.505188, y: 1, z: 25}
+    eccentricity: 35
+    speed: 15
+    left_object_frame_rate: 180
+    right_object_frame_rate: 36
+  - left_object_position: {x: -17.505188, y: 1, z: 25}
+    right_object_position: {x: 17.505188, y: 1, z: 25}
+    eccentricity: 35
+    speed: 15
+    left_object_frame_rate: 36
+    right_object_frame_rate: 180
+  - left_object_position: {x: -17.505188, y: 1, z: 25}
+    right_object_position: {x: 17.505188, y: 1, z: 25}
+    eccentricity: 35
+    speed: 15
+    left_object_frame_rate: 180
+    right_object_frame_rate: 45
+  - left_object_position: {x: -17.505188, y: 1, z: 25}
+    right_object_position: {x: 17.505188, y: 1, z: 25}
+    eccentricity: 35
+    speed: 15
+    left_object_frame_rate: 45
+    right_object_frame_rate: 180
+  - left_object_position: {x: -17.505188, y: 1, z: 25}
+    right_object_position: {x: 17.505188, y: 1, z: 25}
+    eccentricity: 35
+    speed: 15
+    left_object_frame_rate: 180
+    right_object_frame_rate: 60
+  - left_object_position: {x: -17.505188, y: 1, z: 25}
+    right_object_position: {x: 17.505188, y: 1, z: 25}
+    eccentricity: 35
+    speed: 15
+    left_object_frame_rate: 60
+    right_object_frame_rate: 180
+  - left_object_position: {x: -17.505188, y: 1, z: 25}
+    right_object_position: {x: 17.505188, y: 1, z: 25}
+    eccentricity: 35
+    speed: 15
+    left_object_frame_rate: 180
+    right_object_frame_rate: 90
+  - left_object_position: {x: -17.505188, y: 1, z: 25}
+    right_object_position: {x: 17.505188, y: 1, z: 25}
+    eccentricity: 35
+    speed: 15
+    left_object_frame_rate: 90
+    right_object_frame_rate: 180
+  - left_object_position: {x: -17.505188, y: 1, z: 25}
+    right_object_position: {x: 17.505188, y: 1, z: 25}
+    eccentricity: 35
+    speed: 15
+    left_object_frame_rate: 180
+    right_object_frame_rate: 180
+  - left_object_position: {x: -17.505188, y: 1, z: 25}
+    right_object_position: {x: 17.505188, y: 1, z: 25}
+    eccentricity: 35
+    speed: 15
     left_object_frame_rate: 180
     right_object_frame_rate: 180
   - left_object_position: {x: -25, y: 1, z: 25}
     right_object_position: {x: 25, y: 1, z: 25}
     eccentricity: 45
-    speed: 3
+    speed: 5
     left_object_frame_rate: 180
     right_object_frame_rate: 12
   - left_object_position: {x: -25, y: 1, z: 25}
     right_object_position: {x: 25, y: 1, z: 25}
     eccentricity: 45
-    speed: 3
+    speed: 5
     left_object_frame_rate: 12
     right_object_frame_rate: 180
   - left_object_position: {x: -25, y: 1, z: 25}
     right_object_position: {x: 25, y: 1, z: 25}
     eccentricity: 45
-    speed: 3
+    speed: 5
     left_object_frame_rate: 180
     right_object_frame_rate: 18
   - left_object_position: {x: -25, y: 1, z: 25}
     right_object_position: {x: 25, y: 1, z: 25}
     eccentricity: 45
-    speed: 3
-    left_object_frame_rate: 24
-    right_object_frame_rate: 180
-  - left_object_position: {x: -25, y: 1, z: 25}
-    right_object_position: {x: 25, y: 1, z: 25}
-    eccentricity: 45
-    speed: 3
-    left_object_frame_rate: 180
-    right_object_frame_rate: 30
-  - left_object_position: {x: -25, y: 1, z: 25}
-    right_object_position: {x: 25, y: 1, z: 25}
-    eccentricity: 45
-    speed: 3
-    left_object_frame_rate: 30
-    right_object_frame_rate: 180
-  - left_object_position: {x: -25, y: 1, z: 25}
-    right_object_position: {x: 25, y: 1, z: 25}
-    eccentricity: 45
-    speed: 3
-    left_object_frame_rate: 180
-    right_object_frame_rate: 36
-  - left_object_position: {x: -25, y: 1, z: 25}
-    right_object_position: {x: 25, y: 1, z: 25}
-    eccentricity: 45
-    speed: 3
-    left_object_frame_rate: 36
-    right_object_frame_rate: 180
-  - left_object_position: {x: -25, y: 1, z: 25}
-    right_object_position: {x: 25, y: 1, z: 25}
-    eccentricity: 45
-    speed: 3
-    left_object_frame_rate: 180
-    right_object_frame_rate: 60
-  - left_object_position: {x: -25, y: 1, z: 25}
-    right_object_position: {x: 25, y: 1, z: 25}
-    eccentricity: 45
-    speed: 3
-    left_object_frame_rate: 60
-    right_object_frame_rate: 180
-  - left_object_position: {x: -25, y: 1, z: 25}
-    right_object_position: {x: 25, y: 1, z: 25}
-    eccentricity: 45
-    speed: 3
-    left_object_frame_rate: 180
-    right_object_frame_rate: 90
-  - left_object_position: {x: -25, y: 1, z: 25}
-    right_object_position: {x: 25, y: 1, z: 25}
-    eccentricity: 45
-    speed: 3
-    left_object_frame_rate: 90
-    right_object_frame_rate: 180
-  - left_object_position: {x: -25, y: 1, z: 25}
-    right_object_position: {x: 25, y: 1, z: 25}
-    eccentricity: 45
-    speed: 6
-    left_object_frame_rate: 180
-    right_object_frame_rate: 12
-  - left_object_position: {x: -25, y: 1, z: 25}
-    right_object_position: {x: 25, y: 1, z: 25}
-    eccentricity: 45
-    speed: 6
-    left_object_frame_rate: 12
-    right_object_frame_rate: 180
-  - left_object_position: {x: -25, y: 1, z: 25}
-    right_object_position: {x: 25, y: 1, z: 25}
-    eccentricity: 45
-    speed: 6
-    left_object_frame_rate: 180
-    right_object_frame_rate: 18
-  - left_object_position: {x: -25, y: 1, z: 25}
-    right_object_position: {x: 25, y: 1, z: 25}
-    eccentricity: 45
-    speed: 6
+    speed: 5
     left_object_frame_rate: 18
     right_object_frame_rate: 180
   - left_object_position: {x: -25, y: 1, z: 25}
     right_object_position: {x: 25, y: 1, z: 25}
     eccentricity: 45
-    speed: 6
+    speed: 5
     left_object_frame_rate: 180
     right_object_frame_rate: 24
   - left_object_position: {x: -25, y: 1, z: 25}
     right_object_position: {x: 25, y: 1, z: 25}
     eccentricity: 45
-    speed: 6
+    speed: 5
     left_object_frame_rate: 24
     right_object_frame_rate: 180
   - left_object_position: {x: -25, y: 1, z: 25}
     right_object_position: {x: 25, y: 1, z: 25}
     eccentricity: 45
-    speed: 6
+    speed: 5
     left_object_frame_rate: 180
     right_object_frame_rate: 30
   - left_object_position: {x: -25, y: 1, z: 25}
     right_object_position: {x: 25, y: 1, z: 25}
     eccentricity: 45
-    speed: 6
+    speed: 5
     left_object_frame_rate: 30
     right_object_frame_rate: 180
   - left_object_position: {x: -25, y: 1, z: 25}
     right_object_position: {x: 25, y: 1, z: 25}
     eccentricity: 45
-    speed: 6
+    speed: 5
     left_object_frame_rate: 180
     right_object_frame_rate: 36
   - left_object_position: {x: -25, y: 1, z: 25}
     right_object_position: {x: 25, y: 1, z: 25}
     eccentricity: 45
-    speed: 6
+    speed: 5
+    left_object_frame_rate: 36
+    right_object_frame_rate: 180
+  - left_object_position: {x: -25, y: 1, z: 25}
+    right_object_position: {x: 25, y: 1, z: 25}
+    eccentricity: 45
+    speed: 5
     left_object_frame_rate: 180
     right_object_frame_rate: 45
   - left_object_position: {x: -25, y: 1, z: 25}
     right_object_position: {x: 25, y: 1, z: 25}
     eccentricity: 45
-    speed: 6
+    speed: 5
     left_object_frame_rate: 45
     right_object_frame_rate: 180
   - left_object_position: {x: -25, y: 1, z: 25}
     right_object_position: {x: 25, y: 1, z: 25}
     eccentricity: 45
-    speed: 6
+    speed: 5
     left_object_frame_rate: 180
     right_object_frame_rate: 60
   - left_object_position: {x: -25, y: 1, z: 25}
     right_object_position: {x: 25, y: 1, z: 25}
     eccentricity: 45
-    speed: 6
+    speed: 5
     left_object_frame_rate: 60
     right_object_frame_rate: 180
   - left_object_position: {x: -25, y: 1, z: 25}
     right_object_position: {x: 25, y: 1, z: 25}
     eccentricity: 45
-    speed: 6
+    speed: 5
     left_object_frame_rate: 180
     right_object_frame_rate: 90
   - left_object_position: {x: -25, y: 1, z: 25}
     right_object_position: {x: 25, y: 1, z: 25}
     eccentricity: 45
-    speed: 6
+    speed: 5
     left_object_frame_rate: 90
     right_object_frame_rate: 180
   - left_object_position: {x: -25, y: 1, z: 25}
     right_object_position: {x: 25, y: 1, z: 25}
     eccentricity: 45
-    speed: 6
+    speed: 5
     left_object_frame_rate: 180
     right_object_frame_rate: 180
   - left_object_position: {x: -25, y: 1, z: 25}
     right_object_position: {x: 25, y: 1, z: 25}
     eccentricity: 45
-    speed: 6
+    speed: 5
+    left_object_frame_rate: 180
+    right_object_frame_rate: 180
+  - left_object_position: {x: -25, y: 1, z: 25}
+    right_object_position: {x: 25, y: 1, z: 25}
+    eccentricity: 45
+    speed: 15
+    left_object_frame_rate: 180
+    right_object_frame_rate: 12
+  - left_object_position: {x: -25, y: 1, z: 25}
+    right_object_position: {x: 25, y: 1, z: 25}
+    eccentricity: 45
+    speed: 15
+    left_object_frame_rate: 12
+    right_object_frame_rate: 180
+  - left_object_position: {x: -25, y: 1, z: 25}
+    right_object_position: {x: 25, y: 1, z: 25}
+    eccentricity: 45
+    speed: 15
+    left_object_frame_rate: 180
+    right_object_frame_rate: 18
+  - left_object_position: {x: -25, y: 1, z: 25}
+    right_object_position: {x: 25, y: 1, z: 25}
+    eccentricity: 45
+    speed: 15
+    left_object_frame_rate: 18
+    right_object_frame_rate: 180
+  - left_object_position: {x: -25, y: 1, z: 25}
+    right_object_position: {x: 25, y: 1, z: 25}
+    eccentricity: 45
+    speed: 15
+    left_object_frame_rate: 180
+    right_object_frame_rate: 24
+  - left_object_position: {x: -25, y: 1, z: 25}
+    right_object_position: {x: 25, y: 1, z: 25}
+    eccentricity: 45
+    speed: 15
+    left_object_frame_rate: 24
+    right_object_frame_rate: 180
+  - left_object_position: {x: -25, y: 1, z: 25}
+    right_object_position: {x: 25, y: 1, z: 25}
+    eccentricity: 45
+    speed: 15
+    left_object_frame_rate: 180
+    right_object_frame_rate: 30
+  - left_object_position: {x: -25, y: 1, z: 25}
+    right_object_position: {x: 25, y: 1, z: 25}
+    eccentricity: 45
+    speed: 15
+    left_object_frame_rate: 30
+    right_object_frame_rate: 180
+  - left_object_position: {x: -25, y: 1, z: 25}
+    right_object_position: {x: 25, y: 1, z: 25}
+    eccentricity: 45
+    speed: 15
+    left_object_frame_rate: 180
+    right_object_frame_rate: 36
+  - left_object_position: {x: -25, y: 1, z: 25}
+    right_object_position: {x: 25, y: 1, z: 25}
+    eccentricity: 45
+    speed: 15
+    left_object_frame_rate: 36
+    right_object_frame_rate: 180
+  - left_object_position: {x: -25, y: 1, z: 25}
+    right_object_position: {x: 25, y: 1, z: 25}
+    eccentricity: 45
+    speed: 15
+    left_object_frame_rate: 180
+    right_object_frame_rate: 45
+  - left_object_position: {x: -25, y: 1, z: 25}
+    right_object_position: {x: 25, y: 1, z: 25}
+    eccentricity: 45
+    speed: 15
+    left_object_frame_rate: 45
+    right_object_frame_rate: 180
+  - left_object_position: {x: -25, y: 1, z: 25}
+    right_object_position: {x: 25, y: 1, z: 25}
+    eccentricity: 45
+    speed: 15
+    left_object_frame_rate: 180
+    right_object_frame_rate: 60
+  - left_object_position: {x: -25, y: 1, z: 25}
+    right_object_position: {x: 25, y: 1, z: 25}
+    eccentricity: 45
+    speed: 15
+    left_object_frame_rate: 60
+    right_object_frame_rate: 180
+  - left_object_position: {x: -25, y: 1, z: 25}
+    right_object_position: {x: 25, y: 1, z: 25}
+    eccentricity: 45
+    speed: 15
+    left_object_frame_rate: 180
+    right_object_frame_rate: 90
+  - left_object_position: {x: -25, y: 1, z: 25}
+    right_object_position: {x: 25, y: 1, z: 25}
+    eccentricity: 45
+    speed: 15
+    left_object_frame_rate: 90
+    right_object_frame_rate: 180
+  - left_object_position: {x: -25, y: 1, z: 25}
+    right_object_position: {x: 25, y: 1, z: 25}
+    eccentricity: 45
+    speed: 15
+    left_object_frame_rate: 180
+    right_object_frame_rate: 180
+  - left_object_position: {x: -25, y: 1, z: 25}
+    right_object_position: {x: 25, y: 1, z: 25}
+    eccentricity: 45
+    speed: 15
     left_object_frame_rate: 180
     right_object_frame_rate: 180

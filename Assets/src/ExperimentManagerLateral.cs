@@ -2,7 +2,7 @@ using UnityEngine;
 using TMPro;
 using System.IO;
 using static System.Runtime.CompilerServices.RuntimeHelpers;
-
+using Microsoft.Win32.SafeHandles;
 
 public class ExperimentManagerLateral : MonoBehaviour
 {
@@ -74,8 +74,6 @@ public class ExperimentManagerLateral : MonoBehaviour
 		Debug.Log($"Generated {experiment_params.trials.Count} trials.");
 		camera_origin = new Vector3(0.0f, 1.0f, 0.0f);
 
-		left_sphere_target_point = new Vector3(camera_origin.x - 2.0f, camera_origin.y, experiment_params.z_position);
-		right_sphere_target_point = new Vector3(camera_origin.x + 2.0f, camera_origin.y, experiment_params.z_position);
 
 		SetupTrial(Random.Range(0, experiment_params.trials.Count));
 	}
@@ -170,9 +168,16 @@ public class ExperimentManagerLateral : MonoBehaviour
 		trial_start_time = Time.time;
 
 		initialize_fixation_for_attentional_trials();
+	
+		// Move objects from like 50 -> 40 degrees, 20 -> 10, etc
+
+		left_sphere_target_point = new Vector3(left_sphere.transform.position.x + 6.0f, camera_origin.y, experiment_params.z_position);
+        right_sphere_target_point = new Vector3(right_sphere.transform.position.x - 6.0f, camera_origin.y, experiment_params.z_position);
 
 
-		Debug.Log($"Trial {trial_index}/{experiment_params.trials.Count} - " +
+
+
+        Debug.Log($"Trial {trial_index}/{experiment_params.trials.Count} - " +
 				  $"Speed: {trial_config.speed}, " +
 				  $"Left FrameRate: {trial_config.left_object_frame_rate}, " +
 				  $"Right FrameRate: {trial_config.right_object_frame_rate}");

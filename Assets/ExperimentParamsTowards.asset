@@ -22,7 +22,7 @@ MonoBehaviour:
   y_position: 1
   z_position: 25
   speeds:
-  - 5
-  - 15
+  - 3
+  - 6
   alternate_framerates: 0c00000012000000180000001e000000240000002d0000003c0000005a000000b4000000
   trials: []
