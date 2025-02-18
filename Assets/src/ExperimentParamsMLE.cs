@@ -37,7 +37,7 @@ public class ExperimentParamsMLE : ScriptableObject
 		conditions.Clear();
 
 		float start_x_position = compute_x_position(30.0f);
-		foreach (float speed in speeds)
+		foreach (float s in speeds)
 		{
 			foreach (uint alt_framerate in alternate_framerates)
 			{
@@ -46,7 +46,7 @@ public class ExperimentParamsMLE : ScriptableObject
 					left_object_position = new Vector3(-start_x_position, y_position, z_position),
 					right_object_position = new Vector3(start_x_position, y_position, z_position),
 					eccentricity = default_start_eccentricity,
-					speed = speed,
+					speed = s,
 					left_object_frame_rate = default_framerate,
 					right_object_frame_rate = alt_framerate
 				};
@@ -56,10 +56,28 @@ public class ExperimentParamsMLE : ScriptableObject
 					left_object_position = new Vector3(-start_x_position, y_position, z_position),
 					right_object_position = new Vector3(start_x_position, y_position, z_position),
 					eccentricity = default_start_eccentricity,
-					speed = speed,
+					speed = s,
 					left_object_frame_rate = alt_framerate,
 					right_object_frame_rate = default_framerate
 				};
+
+				conditions.Add(new ConditionConfigMLE
+				{
+					eye_tested = EyeType.RIGHT,
+					trial_config = right_trial,
+					framerate = alt_framerate,
+					speed = s,
+					condition_over = false
+				});
+
+				conditions.Add(new ConditionConfigMLE
+				{
+					eye_tested = EyeType.LEFT,
+					trial_config = left_trial,
+					framerate = alt_framerate,
+					speed = s,
+					condition_over = false
+				});
 			}
 		}
 	}
@@ -76,9 +94,9 @@ public enum EyeType
 public class ConditionConfigMLE
 {
 	public EyeType eye_tested;
-	public TrialConfig trial_config;
+	public TrialConfigMLE trial_config;
 	public uint framerate; // which framerate is this condition testing?
-	float speed;
+	public float speed;
 	public bool condition_over = false;
 }
 
