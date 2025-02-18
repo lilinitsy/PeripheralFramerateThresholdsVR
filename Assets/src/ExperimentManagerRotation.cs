@@ -12,7 +12,7 @@ public class ExperimentManagerRotation : MonoBehaviour
 	public uint attention_level;
 
 	private TrialConfig trial_config;
-
+	private MLEThresholdEstimator mle_estimator;
 	private float trial_start_time = 0.0f;
 	private uint frame_count = 0;
 	private uint current_trial = 0;
@@ -31,6 +31,7 @@ public class ExperimentManagerRotation : MonoBehaviour
         //Application.targetFrameRate = (int) Screen.currentResolution.refreshRateRatio.value;
         Application.targetFrameRate = 90;
         random = new System.Random();
+		mle_estimator = new MLEThresholdEstimator();
 
 		if (experiment_params == null)
 		{

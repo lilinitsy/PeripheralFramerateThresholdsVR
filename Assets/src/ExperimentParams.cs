@@ -19,10 +19,11 @@ public class ExperimentParams : ScriptableObject
     public float z_position = 25.0f;
 
     // Input as degrees for the rotation parameters
-    public float[] speeds = { 5.0f, 15.0f };
+    public float[] speeds = { 10.0f };
 
-    public int[] alternate_framerates = { 12, 18, 24, 30, 36, 45, 60, 90, 180 };
+    public int[] alternate_framerates = {90, 45, 30, 15};
 
+    // operate on these conditions
     public List<TrialConfig> trials = new List<TrialConfig>();
 
 
@@ -36,6 +37,8 @@ public class ExperimentParams : ScriptableObject
         }
     }
 
+
+    // Deprecated
     public void generate_trials()
     {
         trials.Clear();
