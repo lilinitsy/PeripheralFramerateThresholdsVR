@@ -46,7 +46,6 @@ public class ExperimentParamsMLE : ScriptableObject
 					left_object_position = new Vector3(-start_x_position, y_position, z_position),
 					right_object_position = new Vector3(start_x_position, y_position, z_position),
 					eccentricity = default_start_eccentricity,
-					speed = s,
 					left_object_frame_rate = default_framerate,
 					right_object_frame_rate = alt_framerate
 				};
@@ -56,7 +55,6 @@ public class ExperimentParamsMLE : ScriptableObject
 					left_object_position = new Vector3(-start_x_position, y_position, z_position),
 					right_object_position = new Vector3(start_x_position, y_position, z_position),
 					eccentricity = default_start_eccentricity,
-					speed = s,
 					left_object_frame_rate = alt_framerate,
 					right_object_frame_rate = default_framerate
 				};
@@ -67,6 +65,7 @@ public class ExperimentParamsMLE : ScriptableObject
 					trial_config = right_trial,
 					framerate = alt_framerate,
 					speed = s,
+					num_trials = 1,
 					condition_over = false
 				});
 
@@ -76,6 +75,7 @@ public class ExperimentParamsMLE : ScriptableObject
 					trial_config = left_trial,
 					framerate = alt_framerate,
 					speed = s,
+					num_trials = 1,
 					condition_over = false
 				});
 			}
@@ -94,10 +94,17 @@ public enum EyeType
 public class ConditionConfigMLE
 {
 	public EyeType eye_tested;
-	public TrialConfigMLE trial_config;
+	public TrialConfigMLE trial_config; // update with set_next_Trial, to get incrementing automatically
 	public uint framerate; // which framerate is this condition testing?
 	public float speed;
+	public uint num_trials = 0;
 	public bool condition_over = false;
+
+	public void set_next_trial(TrialConfigMLE next_trial_config)
+	{
+		trial_config = next_trial_config;
+		num_trials++;
+	}
 }
 
 public class TrialConfigMLE
@@ -105,7 +112,6 @@ public class TrialConfigMLE
 	public Vector3 left_object_position; 
 	public Vector3 right_object_position; 
 	public float eccentricity; // absolute, doesn't indicate left/right
-	public float speed;
 	public uint left_object_frame_rate;
 	public uint right_object_frame_rate;
 }

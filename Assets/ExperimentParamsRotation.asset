@@ -24,7 +24,7 @@ MonoBehaviour:
   speeds:
   - 90
   - 180
-  alternate_framerates: 090000000a0000000f000000120000001e0000002d0000005a000000
+  alternate_framerates: 5a0000002d0000001e0000000f000000
   trials:
   - left_object_position: {x: -6.69873, y: 1, z: 25}
     right_object_position: {x: 6.69873, y: 1, z: 25}

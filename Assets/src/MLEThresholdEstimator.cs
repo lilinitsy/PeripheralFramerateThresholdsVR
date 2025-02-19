@@ -6,17 +6,19 @@ public class MLEThresholdEstimator
 {
 	public float current_estimate = 30f; // Start at 30 degrees
 	public float sigma = 5.0f; // Slope of the psychometric function
-	public float step_size = 2.0f; // How much we move eccentricity per trial
+	public float step_size = 10.0f; // How much we move eccentricity per trial
 	public int max_trials = 15;
 	public int trial_count = 0;
 
 	public List<float> eccentricities_tested = new List<float>();
 	public List<int> correct_responses = new List<int>();
 
+
 	public float get_current_eccentricity()
 	{
 		return current_estimate;
 	}
+
 
 	public void record_response(bool correct)
 	{
@@ -35,15 +37,14 @@ public class MLEThresholdEstimator
 
 	public void update_estimate()
 	{
-		// Compute new eccentricity using MLE (gradient descent approach)
 		float new_estimate = compute_threshold();
 
-		// Adjust step size dynamically (smaller adjustments as trials progress)
+		// Reduce step size every update
 		step_size = Mathf.Max(0.5f, step_size * 0.8f);
 
-		// Move towards the estimated threshold but within reasonable bounds
+		// Move towards the estimated threshold
 		current_estimate += Mathf.Sign(new_estimate - current_estimate) * step_size;
-		current_estimate = Mathf.Clamp(current_estimate, 5f, 50f); // Keep within valid eccentricities
+		current_estimate = Mathf.Clamp(current_estimate, 5.0f, 45.0f); // Keep within valid eccentricities
 	}
 
 	public float compute_threshold()

@@ -1111,11 +1111,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9d09b09aacfc42499f2b24cfd6dd9a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  experiment_params: {fileID: 11400000, guid: e03989fc550c6ee438662132cf0e4be5, type: 2}
+  experiment_params: {fileID: 11400000, guid: 00281bbc7549a0c4990f418de6161582, type: 2}
   left_chart: {fileID: 1737343492}
   right_chart: {fileID: 1168900518}
   fixation_textmeshpro: {fileID: 688774495}
-  attention_level: 1
+  attention_level: 0
 --- !u!4 &1286354244
 Transform:
   m_ObjectHideFlags: 0

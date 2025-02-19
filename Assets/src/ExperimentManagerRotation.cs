@@ -15,7 +15,9 @@ public class ExperimentManagerRotation : MonoBehaviour
 	private MLEThresholdEstimator mle_estimator;
 	private float trial_start_time = 0.0f;
 	private uint frame_count = 0;
-	private uint current_trial = 0;
+	private uint condition_num = 0;
+	private bool correct_guess = false;
+	private bool this_trial_answered = false;
 
 	// Variables to change attention level colour;
 	private TextMeshPro text_component; // Reference to fixation_textmeshpro's textmeshpro's component... very  convoluted...
@@ -31,7 +33,6 @@ public class ExperimentManagerRotation : MonoBehaviour
         //Application.targetFrameRate = (int) Screen.currentResolution.refreshRateRatio.value;
         Application.targetFrameRate = 90;
         random = new System.Random();
-		mle_estimator = new MLEThresholdEstimator();
 
 		if (experiment_params == null)
 		{
@@ -71,7 +72,7 @@ public class ExperimentManagerRotation : MonoBehaviour
 		experiment_params.generate_conditions();
 		Debug.Log($"Generated {experiment_params.conditions.Count} trials.");
 
-
+		// Set first condition we'll test
 		setup_condition(Random.Range(0, experiment_params.conditions.Count));
 	}
 
@@ -82,12 +83,17 @@ public class ExperimentManagerRotation : MonoBehaviour
 
 		if (Input.GetKeyDown(KeyCode.LeftArrow))
 		{
-			save_trial_data(KeyCode.LeftArrow);
+			correct_guess = check_guess(KeyCode.LeftArrow);
+			save_trial_data(KeyCode.LeftArrow, correct_guess);
+			this_trial_answered = true;
+			
 		}
 
 		else if (Input.GetKeyDown(KeyCode.RightArrow))
 		{
-			save_trial_data(KeyCode.RightArrow);
+			correct_guess = check_guess(KeyCode.LeftArrow);
+			save_trial_data(KeyCode.RightArrow, correct_guess);
+			this_trial_answered = true;
 		}
 
 		uint left_update_interval = experiment_params.default_framerate / condition_config.trial_config.left_object_frame_rate;
@@ -98,12 +104,12 @@ public class ExperimentManagerRotation : MonoBehaviour
 			// Should they rotate the same direction or opposing??? This does the same way, opposing was weird.
 			if (frame_count % left_update_interval == 0)
 			{
-				left_chart.transform.Rotate(0.0f, 0.0f, condition_config.trial_config.speed * Time.deltaTime * left_update_interval);
+				left_chart.transform.Rotate(0.0f, 0.0f, condition_config.speed * Time.deltaTime * left_update_interval);
 			}
 
 			if (frame_count % right_update_interval == 0)
 			{
-				right_chart.transform.Rotate(0.0f, 0.0f, condition_config.trial_config.speed * Time.deltaTime * right_update_interval);
+				right_chart.transform.Rotate(0.0f, 0.0f, condition_config.speed * Time.deltaTime * right_update_interval);
 			};
 		}
 
@@ -131,9 +137,18 @@ public class ExperimentManagerRotation : MonoBehaviour
 			}
 		}
 
-		if (Time.time - trial_start_time >= 5.0f)
+		if (Time.time - trial_start_time >= 5.0f && this_trial_answered)
 		{
-			setup_trial(Random.Range(0, experiment_params.trials.Count));
+
+			if (condition_config.num_trials >= mle_estimator.max_trials)
+			{
+				setup_condition(Random.Range(0, experiment_params.conditions.Count));
+			}
+
+			else
+			{
+				setup_trial(correct_guess);
+			}
 		}
 	}
 
@@ -147,21 +162,54 @@ public class ExperimentManagerRotation : MonoBehaviour
 			return;
 		}
 
+		// Reset MLE every condition
+		mle_estimator = new MLEThresholdEstimator();
 		condition_config = experiment_params.conditions[condition_index];
 		experiment_params.conditions.RemoveAt(condition_index);
 
+
+		// Initialize objects with the first conditions
+		left_chart.transform.position = condition_config.trial_config.left_object_position;
+		right_chart.transform.position = condition_config.trial_config.right_object_position;
+
+		// Reset whether this trial got a response
+		correct_guess = false;
+		this_trial_answered = false;
+
+		condition_num++;
+		trial_start_time = Time.time;
 	}
 
 
-	public void setup_trial(int trial_index)
+	public void setup_trial(bool previous_correct)
 	{
-		current_trial++;
-		if (trial_index < 0 || trial_index >= experiment_params.trials.Count)
-		{
-			Debug.LogError("Invalid trial index.");
-			return;
-		}
+		// Don't update condition_config.num_trials. It'll get updated by set_next_trial()
+		// Update MLE
+		mle_estimator.record_response(previous_correct);
 
+		float new_eccentricity = mle_estimator.get_current_eccentricity();
+		float x_pos = experiment_params.z_position * Mathf.Tan(new_eccentricity * Mathf.Deg2Rad);
+
+		TrialConfigMLE new_trial_config = new TrialConfigMLE
+		{
+			left_object_position = new Vector3(-x_pos, experiment_params.y_position, experiment_params.z_position),
+			right_object_position = new Vector3(x_pos, experiment_params.y_position, experiment_params.z_position),
+			eccentricity = new_eccentricity, 
+			left_object_frame_rate = condition_config.trial_config.left_object_frame_rate,
+			right_object_frame_rate = condition_config.trial_config.right_object_frame_rate
+		};
+
+		condition_config.set_next_trial(new_trial_config);
+
+		left_chart.transform.position = condition_config.trial_config.left_object_position;
+		right_chart.transform.position = condition_config.trial_config.right_object_position;
+
+		// Reset whether this trial got a response
+		correct_guess = false;
+		this_trial_answered = false;
+		Debug.Log($"Condition {condition_num}, Trial {condition_config.num_trials} | New Eccentricity: {new_eccentricity}°");
+
+		trial_start_time = Time.time;
 	}
 
 
@@ -179,22 +227,37 @@ public class ExperimentManagerRotation : MonoBehaviour
 	}
 
 
+	bool check_guess(KeyCode keycode)
+	{
+		// 
+		if(keycode == KeyCode.LeftArrow && condition_config.eye_tested == EyeType.LEFT ||
+			keycode == KeyCode.RightArrow && condition_config.eye_tested == EyeType.RIGHT)
+		{
+			return true;
+		}
 
-    public void save_trial_data(KeyCode keycode)
+		return false;
+	}
+
+
+
+    public void save_trial_data(KeyCode keycode, bool correct)
     {
         string filepath = Path.Combine(Application.dataPath, "experiment-rotation.csv");
         string[] headers = {
+			"ConditionNum",
             "TrialNum",
             "Speed",
             "Eccentricity",
             "LeftFrameRate",
             "RightFrameRate",
-            "UserInput",
-            "Correct" // Whether UserInput matches whichever was the non-target framerate. Will always be false when they're the same.
+			"MLE Current Estimate",
+			"MLE Step Size",
+			"UserInput",
+			"Correct", // Whether UserInput matches whichever was the non-target framerate. Will always be false when they're the same.
 		};
 
         string left_right = "";
-        bool b_correct = false;
 
 
         if (keycode == KeyCode.LeftArrow)
@@ -207,27 +270,18 @@ public class ExperimentManagerRotation : MonoBehaviour
             left_right = "right";
         }
 
-        // Left is slower, they selected left
-        if (trial_config.left_object_frame_rate != experiment_params.default_framerate && left_right == "left")
-        {
-            b_correct = true;
-        }
-
-        else if (trial_config.right_object_frame_rate != experiment_params.default_framerate && left_right == "right")
-        {
-            b_correct = true;
-        }
-
-
-
         string[] trial_data = {
-            current_trial.ToString(),
-            trial_config.speed.ToString(),
-            trial_config.eccentricity.ToString(),
-            trial_config.left_object_frame_rate.ToString(),
-            trial_config.right_object_frame_rate.ToString(),
-            left_right,
-            b_correct.ToString(),
+			condition_num.ToString(),
+			mle_estimator.trial_count.ToString(),
+			condition_config.speed.ToString(),
+			condition_config.trial_config.eccentricity.ToString(),
+			condition_config.trial_config.left_object_frame_rate.ToString(),
+			condition_config.trial_config.right_object_frame_rate.ToString(),
+			mle_estimator.current_estimate.ToString(),
+			mle_estimator.step_size.ToString(),
+			left_right,
+			correct.ToString(),
+			// something for if their eyes deviated			
         };
 
 
